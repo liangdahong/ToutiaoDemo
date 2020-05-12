@@ -118,6 +118,7 @@
 		04BB9488246AF61300D1C909 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				04BB9498246B06FB00D1C909 /* Category */,
 				04BB9489246AF61300D1C909 /* BMLongPressDragCellCollectionView */,
 			);
 			path = Lib;
@@ -130,8 +131,6 @@
 				04BB948C246AF61300D1C909 /* BMLongPressDragCellCollectionViewDataSource.h */,
 				04BB948D246AF61300D1C909 /* BMLongPressDragCellCollectionView.h */,
 				04BB948B246AF61300D1C909 /* BMLongPressDragCellCollectionView.m */,
-				04BB9493246AFEC600D1C909 /* UICollectionView+BMRect.h */,
-				04BB9492246AFEC500D1C909 /* UICollectionView+BMRect.m */,
 			);
 			path = BMLongPressDragCellCollectionView;
 			sourceTree = "<group>";
@@ -145,6 +144,15 @@
 				32F00B521FDE2D8D00174DB1 /* View */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		04BB9498246B06FB00D1C909 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				04BB9493246AFEC600D1C909 /* UICollectionView+BMRect.h */,
+				04BB9492246AFEC500D1C909 /* UICollectionView+BMRect.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		0FE96ED939804D7515A7A0AA /* Frameworks */ = {

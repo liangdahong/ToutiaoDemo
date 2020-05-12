@@ -24,7 +24,12 @@
 
 @interface UICollectionView (BMRect)
 
+/// 获取组的 rect
+/// @param section 组
 - (CGRect)bm_rectForSection:(NSInteger)section;
+
+/// 获取 cell 的 rect
+/// @param indexPath indexPath
 - (CGRect)bm_rectForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
