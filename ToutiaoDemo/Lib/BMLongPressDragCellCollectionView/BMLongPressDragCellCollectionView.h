@@ -20,12 +20,11 @@
 //    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //    SOFTWARE.
 
-//    v3.0.5
+//    v3.0.6
 
 #import <UIKit/UIKit.h>
 #import "BMLongPressDragCellCollectionViewDelegate.h"
 #import "BMLongPressDragCellCollectionViewDataSource.h"
-#import "UICollectionView+BMRect.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

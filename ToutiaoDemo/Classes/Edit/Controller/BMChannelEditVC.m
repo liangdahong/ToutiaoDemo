@@ -12,6 +12,7 @@
 #import "BMLongPressDragCellCollectionView.h"
 #import <BlocksKit/UIBarButtonItem+BlocksKit.h>
 #import <SVProgressHUD/SVProgressHUD.h>
+#import "UICollectionView+BMRect.h"
 
 @interface BMChannelEditVC () <BMLongPressDragCellCollectionViewDataSource, BMLongPressDragCellCollectionViewDelegate>
 
@@ -173,7 +174,7 @@ static NSString *kBMChannelEditCell = @"kBMChannelEditCell";
 }
 
 /// 正在拖拽时
-- (void)dragCellCollectionView:(BMLongPressDragCellCollectionView *)dragCellCollectionView changedDragAtPoint:(CGPoint)point indexPath:(NSIndexPath *)indexPath {
+- (void)dragCellCollectionView:(BMLongPressDragCellCollectionView *)dragCellCollectionView changedDragAtPoint:(CGPoint)point {
     CGRect rect = [dragCellCollectionView bm_rectForSection:1];
     if (point.y > CGRectGetMinY(rect)) {
         [SVProgressHUD showInfoWithStatus:@"松手自动移动到第 2 组"];
@@ -201,7 +202,7 @@ static NSString *kBMChannelEditCell = @"kBMChannelEditCell";
 }
 
 /// 结束拖拽时
-- (void)dragCellCollectionView:(BMLongPressDragCellCollectionView *)dragCellCollectionView endedDragAtPoint:(CGPoint)point indexPath:(NSIndexPath *)indexPath {
+- (void)dragCellCollectionView:(BMLongPressDragCellCollectionView *)dragCellCollectionView endedDragAtPoint:(CGPoint)point {
     CGRect rect = [dragCellCollectionView bm_rectForSection:1];
     if (point.y > CGRectGetMinY(rect)) {
         [dragCellCollectionView dragMoveItemToIndexPath:[NSIndexPath indexPathForItem:0 inSection:1]];
