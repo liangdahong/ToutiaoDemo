@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04BB948E246AF61300D1C909 /* BMLongPressDragCellCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BB948B246AF61300D1C909 /* BMLongPressDragCellCollectionView.m */; };
+		04BB9494246AFEC600D1C909 /* UICollectionView+BMRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BB9492246AFEC500D1C909 /* UICollectionView+BMRect.m */; };
 		12AE4F46302427160E0990C5 /* libPods-ToutiaoDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12A747B13F4E9BB572648D6D /* libPods-ToutiaoDemo.a */; };
 		32F00B1C1FDE2B3D00174DB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32F00B1A1FDE2B3D00174DB1 /* Main.storyboard */; };
 		32F00B1E1FDE2B3D00174DB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32F00B1D1FDE2B3D00174DB1 /* Assets.xcassets */; };
@@ -44,6 +46,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04BB948A246AF61300D1C909 /* BMLongPressDragCellCollectionViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMLongPressDragCellCollectionViewDelegate.h; sourceTree = "<group>"; };
+		04BB948B246AF61300D1C909 /* BMLongPressDragCellCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMLongPressDragCellCollectionView.m; sourceTree = "<group>"; };
+		04BB948C246AF61300D1C909 /* BMLongPressDragCellCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMLongPressDragCellCollectionViewDataSource.h; sourceTree = "<group>"; };
+		04BB948D246AF61300D1C909 /* BMLongPressDragCellCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMLongPressDragCellCollectionView.h; sourceTree = "<group>"; };
+		04BB9492246AFEC500D1C909 /* UICollectionView+BMRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+BMRect.m"; sourceTree = "<group>"; };
+		04BB9493246AFEC600D1C909 /* UICollectionView+BMRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+BMRect.h"; sourceTree = "<group>"; };
 		12A747B13F4E9BB572648D6D /* libPods-ToutiaoDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ToutiaoDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F68B8A364EB74967D6B1B4D /* libPods-ToutiaoDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ToutiaoDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32F00B0E1FDE2B3D00174DB1 /* ToutiaoDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToutiaoDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +113,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04BB9488246AF61300D1C909 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				04BB9489246AF61300D1C909 /* BMLongPressDragCellCollectionView */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		04BB9489246AF61300D1C909 /* BMLongPressDragCellCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				04BB948A246AF61300D1C909 /* BMLongPressDragCellCollectionViewDelegate.h */,
+				04BB948C246AF61300D1C909 /* BMLongPressDragCellCollectionViewDataSource.h */,
+				04BB948D246AF61300D1C909 /* BMLongPressDragCellCollectionView.h */,
+				04BB948B246AF61300D1C909 /* BMLongPressDragCellCollectionView.m */,
+				04BB9493246AFEC600D1C909 /* UICollectionView+BMRect.h */,
+				04BB9492246AFEC500D1C909 /* UICollectionView+BMRect.m */,
+			);
+			path = BMLongPressDragCellCollectionView;
+			sourceTree = "<group>";
+		};
 		0FE96ED939804D7515A7A0AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,9 +169,9 @@
 		32F00B101FDE2B3D00174DB1 /* ToutiaoDemo */ = {
 			isa = PBXGroup;
 			children = (
-				32F00B441FDE2D5100174DB1 /* AppDelegate */,
 				32F00B481FDE2D5100174DB1 /* Classes */,
-				32F00B491FDE2D5100174DB1 /* Lib */,
+				32F00B441FDE2D5100174DB1 /* AppDelegate */,
+				04BB9488246AF61300D1C909 /* Lib */,
 				32F00B1A1FDE2B3D00174DB1 /* Main.storyboard */,
 				32F00B1D1FDE2B3D00174DB1 /* Assets.xcassets */,
 				32F00B1F1FDE2B3D00174DB1 /* LaunchScreen.storyboard */,
@@ -197,13 +226,6 @@
 				32F00B521FDE2D8D00174DB1 /* View */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		32F00B491FDE2D5100174DB1 /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Lib;
 			sourceTree = "<group>";
 		};
 		32F00B4C1FDE2D8D00174DB1 /* Controller */ = {
@@ -323,7 +345,6 @@
 				32F00B0A1FDE2B3D00174DB1 /* Sources */,
 				32F00B0B1FDE2B3D00174DB1 /* Frameworks */,
 				32F00B0C1FDE2B3D00174DB1 /* Resources */,
-				33976610742A95718B864B10 /* [CP] Embed Pods Frameworks */,
 				35BF71F70643A7DCB01E0247 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -404,6 +425,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -451,34 +473,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		33976610742A95718B864B10 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ToutiaoDemo/Pods-ToutiaoDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		35BF71F70643A7DCB01E0247 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ToutiaoDemo/Pods-ToutiaoDemo-resources.sh",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ToutiaoDemo/Pods-ToutiaoDemo-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ToutiaoDemo/Pods-ToutiaoDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7D29560A3E78FC5519635C02 /* [CP] Check Pods Manifest.lock */ = {
@@ -487,13 +497,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ToutiaoDemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -503,6 +516,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04BB9494246AFEC600D1C909 /* UICollectionView+BMRect.m in Sources */,
 				32F00B561FDE2DAC00174DB1 /* BMHomeVC.m in Sources */,
 				32F00B6D1FDE34F000174DB1 /* BMChannelModel.m in Sources */,
 				32F00B641FDE301C00174DB1 /* BMChannelVC.m in Sources */,
@@ -510,6 +524,7 @@
 				32F00B4A1FDE2D5100174DB1 /* AppDelegate.m in Sources */,
 				32F00B691FDE314200174DB1 /* BMChannelEditCell.m in Sources */,
 				32F00B5B1FDE2E2800174DB1 /* BMChannelEditVC.m in Sources */,
+				04BB948E246AF61300D1C909 /* BMLongPressDragCellCollectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

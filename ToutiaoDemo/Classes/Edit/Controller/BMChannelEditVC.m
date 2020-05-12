@@ -9,16 +9,19 @@
 #import "BMChannelEditVC.h"
 #import "BMChannelEditCell.h"
 #import "BMChannelModel.h"
-#import <BMDragCellCollectionView/BMDragCellCollectionView.h>
+#import "BMLongPressDragCellCollectionView.h"
 #import <BlocksKit/UIBarButtonItem+BlocksKit.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 
-@interface BMChannelEditVC () <BMDragCollectionViewDataSource, BMDragCellCollectionViewDelegate>
+@interface BMChannelEditVC () <BMLongPressDragCellCollectionViewDataSource, BMLongPressDragCellCollectionViewDelegate>
 
-@property (weak, nonatomic) IBOutlet BMDragCellCollectionView *dragCellCollectionView;
-@property (nonatomic, strong) UICollectionViewFlowLayout *collectionViewFlowLayout; ///< collectionViewFlowLayout
-@property (nonatomic, strong) UIBarButtonItem *editButtonItem; ///< editButtonItem
-@property (nonatomic, assign, getter=isEdit) BOOL edit; ///< edit
+@property (weak, nonatomic) IBOutlet BMLongPressDragCellCollectionView *dragCellCollectionView;
+/// collectionViewFlowLayout
+@property (nonatomic, strong) UICollectionViewFlowLayout *collectionViewFlowLayout;
+/// editButtonItem
+@property (nonatomic, strong) UIBarButtonItem *editButtonItem;
+/// edit
+@property (nonatomic, assign, getter=isEdit) BOOL edit;
 
 @end
 
@@ -44,7 +47,6 @@ static NSString *kBMChannelEditCell = @"kBMChannelEditCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"频道编辑";
-    
     self.dragCellCollectionView.dragCellAlpha = 0.9;
     self.dragCellCollectionView.collectionViewLayout = self.collectionViewFlowLayout;
     self.dragCellCollectionView.alwaysBounceVertical = YES;
@@ -85,10 +87,12 @@ static NSString *kBMChannelEditCell = @"kBMChannelEditCell";
     BMChannelEditCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kBMChannelEditCell forIndexPath:indexPath];
     BMChannelModel *model = self.channelModelArray[indexPath.section][indexPath.row];
     // 删除按钮点击
+    __weak typeof(self) weakSelf = self;
     cell.block = ^(UICollectionViewCell *cell) {
+        __strong typeof(self) self = weakSelf;
         [self collectionView:collectionView didSelectItemAtIndexPath:[collectionView indexPathForCell:cell]];
     };
-    
+
     // 这里需集合业务修改 调整代码
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
@@ -107,16 +111,7 @@ static NSString *kBMChannelEditCell = @"kBMChannelEditCell";
         }
     }
     // 这里需集合业务修改 调整代码
-    
     return cell;
-}
-
-- (NSArray *)dataSourceWithDragCellCollectionView:(BMDragCellCollectionView *)dragCellCollectionView {
-    return self.channelModelArray;
-}
-
-- (void)dragCellCollectionView:(BMDragCellCollectionView *)dragCellCollectionView newDataArrayAfterMove:(NSArray *)newDataArray {
-    self.channelModelArray = [newDataArray mutableCopy];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -156,20 +151,16 @@ static NSString *kBMChannelEditCell = @"kBMChannelEditCell";
     }
 }
 
+#pragma mark - BMLongPressDragCellCollectionViewDataSource
 
-- (BOOL)dragCellCollectionViewShouldBeginExchange:(BMDragCellCollectionView *)dragCellCollectionView sourceIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
-    if (destinationIndexPath.row == 0 && destinationIndexPath.section == 0) {
-        // 如果拖拽到推荐cell不允许交换
-        return NO;
-    }
-    if (sourceIndexPath.section == destinationIndexPath.section) {
-        // 如果是相同组才可以交换（第一组的cell之间）
-        return YES;
-    }
-    return NO;
+- (NSArray *)dataSourceWithDragCellCollectionView:(BMLongPressDragCellCollectionView *)dragCellCollectionView {
+    return self.channelModelArray;
 }
 
-- (BOOL)dragCellCollectionViewShouldBeginMove:(BMDragCellCollectionView *)dragCellCollectionView indexPath:(NSIndexPath *)indexPath {
+#pragma mark - BMLongPressDragCellCollectionViewDelegate
+
+/// 将要开始拖拽时，询问此位置的 Cell 是否能拖拽
+- (BOOL)dragCellCollectionViewShouldBeginMove:(BMLongPressDragCellCollectionView *)dragCellCollectionView indexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
         // 如果是第二组  不允许拖拽
         return NO;
@@ -181,13 +172,43 @@ static NSString *kBMChannelEditCell = @"kBMChannelEditCell";
     return YES;
 }
 
-- (BOOL)dragCellCollectionView:(BMDragCellCollectionView *)dragCellCollectionView endedDragAutomaticOperationAtPoint:(CGPoint)point section:(NSInteger)section indexPath:(NSIndexPath *)indexPath {
-    if (section == 1) {
-        // 如果拖到了第一组松开就移动 而且内部不自动处理
-        [dragCellCollectionView dragMoveItemToIndexPath:[NSIndexPath indexPathForItem:0 inSection:1]];
+/// 正在拖拽时
+- (void)dragCellCollectionView:(BMLongPressDragCellCollectionView *)dragCellCollectionView changedDragAtPoint:(CGPoint)point indexPath:(NSIndexPath *)indexPath {
+    CGRect rect = [dragCellCollectionView bm_rectForSection:1];
+    if (point.y > CGRectGetMinY(rect)) {
+        [SVProgressHUD showInfoWithStatus:@"松手自动移动到第 2 组"];
+    } else {
+        [SVProgressHUD dismiss];
+    }
+}
+
+/// cell 将要交换时，询问是否能交换
+- (BOOL)dragCellCollectionViewShouldBeginExchange:(BMLongPressDragCellCollectionView *)dragCellCollectionView sourceIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+    if (destinationIndexPath.row == 0 && destinationIndexPath.section == 0) {
+        // 如果拖拽到推荐 cell 不允许交换
         return NO;
     }
-    return YES;
+    if (sourceIndexPath.section == destinationIndexPath.section) {
+        // 如果是相同组才可以交换（第一组的cell之间）
+        return YES;
+    }
+    return NO;
+}
+
+///  Cell 有交换时调用
+- (void)dragCellCollectionView:(BMLongPressDragCellCollectionView *)dragCellCollectionView newDataArrayAfterMove:(NSArray *)newDataArray {
+    self.channelModelArray = [newDataArray mutableCopy];
+}
+
+/// 结束拖拽时
+- (void)dragCellCollectionView:(BMLongPressDragCellCollectionView *)dragCellCollectionView endedDragAtPoint:(CGPoint)point indexPath:(NSIndexPath *)indexPath {
+    CGRect rect = [dragCellCollectionView bm_rectForSection:1];
+    if (point.y > CGRectGetMinY(rect)) {
+        [dragCellCollectionView dragMoveItemToIndexPath:[NSIndexPath indexPathForItem:0 inSection:1]];
+        [SVProgressHUD dismiss];
+    } else {
+        [SVProgressHUD dismiss];
+    }
 }
 
 @end

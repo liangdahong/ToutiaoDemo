@@ -8,10 +8,6 @@
 
 #import "BMChannelVC.h"
 
-@interface BMChannelVC ()
-
-@end
-
 @implementation BMChannelVC
 
 - (void)viewDidLoad {
