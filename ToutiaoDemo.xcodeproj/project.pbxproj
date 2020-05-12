@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		04BB948E246AF61300D1C909 /* BMLongPressDragCellCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BB948B246AF61300D1C909 /* BMLongPressDragCellCollectionView.m */; };
 		04BB9494246AFEC600D1C909 /* UICollectionView+BMRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BB9492246AFEC500D1C909 /* UICollectionView+BMRect.m */; };
+		04BB9496246B049900D1C909 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 04BB9495246B049900D1C909 /* README.md */; };
 		12AE4F46302427160E0990C5 /* libPods-ToutiaoDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12A747B13F4E9BB572648D6D /* libPods-ToutiaoDemo.a */; };
 		32F00B1C1FDE2B3D00174DB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32F00B1A1FDE2B3D00174DB1 /* Main.storyboard */; };
 		32F00B1E1FDE2B3D00174DB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32F00B1D1FDE2B3D00174DB1 /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		04BB948D246AF61300D1C909 /* BMLongPressDragCellCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMLongPressDragCellCollectionView.h; sourceTree = "<group>"; };
 		04BB9492246AFEC500D1C909 /* UICollectionView+BMRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+BMRect.m"; sourceTree = "<group>"; };
 		04BB9493246AFEC600D1C909 /* UICollectionView+BMRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+BMRect.h"; sourceTree = "<group>"; };
+		04BB9495246B049900D1C909 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		12A747B13F4E9BB572648D6D /* libPods-ToutiaoDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ToutiaoDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F68B8A364EB74967D6B1B4D /* libPods-ToutiaoDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ToutiaoDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32F00B0E1FDE2B3D00174DB1 /* 头条频道编辑.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "头条频道编辑.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +149,7 @@
 		32F00B051FDE2B3D00174DB1 = {
 			isa = PBXGroup;
 			children = (
+				04BB9495246B049900D1C909 /* README.md */,
 				32F00B101FDE2B3D00174DB1 /* ToutiaoDemo */,
 				32F00B2A1FDE2B3D00174DB1 /* ToutiaoDemoTests */,
 				32F00B351FDE2B3E00174DB1 /* ToutiaoDemoUITests */,
@@ -452,6 +455,7 @@
 				32F00B5C1FDE2E2800174DB1 /* BMChannelEditVC.xib in Resources */,
 				32F00B651FDE301C00174DB1 /* BMChannelVC.xib in Resources */,
 				32F00B571FDE2DAC00174DB1 /* BMHomeVC.xib in Resources */,
+				04BB9496246B049900D1C909 /* README.md in Resources */,
 				32F00B1C1FDE2B3D00174DB1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
