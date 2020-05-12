@@ -1,0 +1,38 @@
+PODS:
+  - BlocksKit (2.2.5):
+    - BlocksKit/All (= 2.2.5)
+  - BlocksKit/All (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - SVProgressHUD (2.2.2)
+  - WMPageController (2.3.0)
+
+DEPENDENCIES:
+  - BlocksKit (= 2.2.5)
+  - SVProgressHUD (= 2.2.2)
+  - WMPageController (= 2.3.0)
+
+SPEC REPOS:
+  trunk:
+    - BlocksKit
+    - SVProgressHUD
+    - WMPageController
+
+SPEC CHECKSUMS:
+  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
+  WMPageController: 9f219bb8912a1a1f51af11fde61e2682a7b7e7f2
+
+PODFILE CHECKSUM: f2021736764800b85563e6c436130f8b6accd317
+
+COCOAPODS: 1.8.4
