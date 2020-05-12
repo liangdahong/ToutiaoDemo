@@ -54,7 +54,7 @@
 		04BB9493246AFEC600D1C909 /* UICollectionView+BMRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+BMRect.h"; sourceTree = "<group>"; };
 		12A747B13F4E9BB572648D6D /* libPods-ToutiaoDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ToutiaoDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F68B8A364EB74967D6B1B4D /* libPods-ToutiaoDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ToutiaoDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		32F00B0E1FDE2B3D00174DB1 /* ToutiaoDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToutiaoDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		32F00B0E1FDE2B3D00174DB1 /* 头条频道编辑.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "头条频道编辑.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32F00B1B1FDE2B3D00174DB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32F00B1D1FDE2B3D00174DB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32F00B201FDE2B3D00174DB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 		32F00B0F1FDE2B3D00174DB1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				32F00B0E1FDE2B3D00174DB1 /* ToutiaoDemo.app */,
+				32F00B0E1FDE2B3D00174DB1 /* 头条频道编辑.app */,
 				32F00B271FDE2B3D00174DB1 /* ToutiaoDemoTests.xctest */,
 				32F00B321FDE2B3E00174DB1 /* ToutiaoDemoUITests.xctest */,
 			);
@@ -353,7 +353,7 @@
 			);
 			name = ToutiaoDemo;
 			productName = ToutiaoDemo;
-			productReference = 32F00B0E1FDE2B3D00174DB1 /* ToutiaoDemo.app */;
+			productReference = 32F00B0E1FDE2B3D00174DB1 /* 头条频道编辑.app */;
 			productType = "com.apple.product-type.application";
 		};
 		32F00B261FDE2B3D00174DB1 /* ToutiaoDemoTests */ = {
@@ -681,7 +681,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.idhong.ToutiaoDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "头条频道编辑";
 			};
 			name = Debug;
 		};
@@ -695,7 +695,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.idhong.ToutiaoDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "头条频道编辑";
 			};
 			name = Release;
 		};
